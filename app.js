@@ -41,4 +41,17 @@ app.post('/rezultat-chestionar', (req, res) => {
 	res.send("formular: " + JSON.stringify(req.body));
 });
 
-app.listen(port, () => console.log(`Serverul rulează la adresa http://localhost:`));
+app.listen(port, () => console.log(`Serverul rulează la adresa http://localhost:`)); 
+
+app.get('/autentificare', (req, res) => {
+	const listaIntrebari = [
+		{
+			intrebare: 'Întrebarea 1',
+			variante: ['varianta 1', 'varianta 2', 'varianta 3', 'varianta 4'],
+			corect: 0
+		},
+		//...
+	];
+	// în fișierul views/chestionar.ejs este accesibilă variabila 'intrebari' care conține vectorul de întrebări
+	res.render('autentificare', {intrebari: listaIntrebari});
+});
