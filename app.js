@@ -38,4 +38,22 @@ app.post('/rezultat-chestionar', (req, res) => {
 	res.send("Numarul raspunsurilor corecte este: " + JSON.stringify(req.body));
 });
 
-app.listen(port, () => console.log(`Serverul rulează la adresa http://localhost:`));
+app.listen(port, () => console.log(`Serverul rulează la adresa http://localhost:`)); 
+
+var mysql = require('mysql');
+
+var con = mysql.createConnection({
+  host: "localhost",
+  user: "student",
+  password: "",
+  
+});
+
+con.connect(function(err) {
+	if (err) throw err;
+	console.log("Connected!");
+	con.query("CREATE DATABASE cumparaturi", function (err, result) {
+	  if (err) throw err;
+	  console.log("Database created");
+	});
+  });
