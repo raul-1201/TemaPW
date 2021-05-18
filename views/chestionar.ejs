@@ -1,0 +1,19 @@
+<form action="/rezultat-chestionar" method="POST">
+    <% intrebari.forEach(function(intr) { %>
+        <p id="intrebareText"><%= intr.intrebare %></p>
+
+        <label for="intrebare0" id="intrebare0"><%= intr.variante[0] %></label>
+        <input type="radio" name="radioButton0" id="radioButton0" value="intrebare0"><br>
+        
+        <label for="intrebare1" id="intrebare1"><%= intr.variante[1] %></label>
+        <input type="radio" name="radioButton1" id="radioButton1" value="intrebare1"><br>
+
+        <label for="intrebare2" id="intrebare2"><%= intr.variante[2] %></label>
+        <input type="radio" name="radioButton2" id="radioButton2" value="intrebare2"><br>
+
+        <label for="intrebare3" id="intrebare3"><%= intr.variante[3] %></label>
+        <input type="radio" name="radioButton3" id="radioButton3" value="intrebare3"><br><br><hr><br>
+    <% }); %>
+
+    <input type="submit" value="SUBMIT"><br><br>
+</form>
