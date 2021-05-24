@@ -1,0 +1,56 @@
+@import url(//db.onlinewebfonts.com/c/aef726001a07788d4c639a835fa10360?family=FF+Tisa);
+body{ 
+    background-color: green; 
+
+}  
+
+@font-face {font-family: "FF Tisa"; src: url("//db.onlinewebfonts.com/t/aef726001a07788d4c639a835fa10360.eot"); src: url("//db.onlinewebfonts.com/t/aef726001a07788d4c639a835fa10360.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/aef726001a07788d4c639a835fa10360.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/aef726001a07788d4c639a835fa10360.woff") format("woff"), url("//db.onlinewebfonts.com/t/aef726001a07788d4c639a835fa10360.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/aef726001a07788d4c639a835fa10360.svg#FF Tisa") format("svg"); }
+
+.text{ 
+    text-indent: 3%;
+}
+h1{ 
+    position: relative; 
+    top:25px; 
+    left:10px;  
+    font-family:FF Tisa; 
+    text-transform: uppercase;
+    
+} 
+
+.site-nav{ 
+    margin-left:80%;
+    
+} 
+.buton{ 
+    padding:10px 15px 10px 15px;
+    text-transform: uppercase;
+    border-style: solid; 
+    font-family:FF Tisa; 
+    color:white; 
+    border-color: black; 
+    background-color: black; 
+    text-decoration: none; 
+    text-align: center; 
+} 
+
+.buton:hover{ 
+    background-color:white; 
+    padding: 20px 20px; 
+    border:none; 
+    color:black; 
+    
+
+}  
+
+.text-side{  
+    
+    margin-top:70px;
+    margin-left:0%; 
+    margin-right: 0%; 
+    padding-bottom: 40%; 
+} 
+
+.fieldchestionar{ 
+    margin-top:80px;
+}

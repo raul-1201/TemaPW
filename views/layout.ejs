@@ -1,27 +1,23 @@
 <!DOCTYPE html>
-<html lang="ro-RO">
+<html>
     <head>
-        <meta charset="UTF-8">
-        <title>Papetarie</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="../public/style.css">
     </head>
 
+    <style>
+        <%- include('../public/style.css'); %>
+    </style>
+   
     <body>
-        <header>
-            <h1>Papetarie</h1>
-            <hr>
-        </header>
-
-        <nav>
-            <!-- TO DO -->
-        </nav>
-
-        <main>
-            <%- body -%>
-        </main>
-
-        <footer>
-            <hr>
-            &copy; Miron Raul
-        </footer>
+        <h1>Papetarie</h1> 
+        <nav class="site-nav">
+            <a href="/autentificare" class="buton">Autentificare</a> 
+            <a href="/chestionar" class="buton">Chestionar</a> 
+            
+            
+        
+        </nav> 
+        <%- body -%>
     </body>
 </html>

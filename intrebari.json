@@ -1,25 +1,17 @@
 [
     {
-        "intrebare": "Întrebarea 1",
-        "variante": ["varianta 1", "varianta 2", "varianta 3", "varianta 4"],
-        "corect": 0
+        "intrebare": "Din ce este facuta hartia?",
+        "variante": ["Lemn", "Pamant", "Piatra", "Fier"],
+        "corect": "0"
     },
-
     {
-        "intrebare": "Întrebarea 2",
-        "variante": ["varianta 1", "varianta 2", "varianta 3", "varianta 4"],
-        "corect": 1
+        "intrebare": "Cand a fost inventata hartia?",
+        "variante": ["2021", "3000 i.Hr", "78 d.Hr", "1654"],
+        "corect": "1"
     },
-
     {
-        "intrebare": "Întrebarea 3",
-        "variante": ["varianta 1", "varianta 2", "varianta 3", "varianta 4"],
-        "corect": 3
-    },
-
-    {
-        "intrebare": "Întrebarea 4",
-        "variante": ["varianta 1", "varianta 2", "varianta 3", "varianta 4"],
-        "corect": 2
+        "intrebare": "Din ce a fost fabricata prima hartie si unde?",
+        "variante": ["Metal, Spania", "Bumbac si Apa, Japonia", "Conifere, China", "Papirus, Egiptul Antic"],
+        "corect": "3"
     }
 ]

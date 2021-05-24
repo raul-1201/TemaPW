@@ -1,5 +1,5 @@
 {
-  "name": "proiect-2-raulmiron",
+  "name": "package",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -8,19 +8,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HDR-Organization/proiect-2-RaulMiron.git"
+    "url": "git+https://github.com/HDR-Organization/proiect-2-stefancosma11.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/HDR-Organization/proiect-2-RaulMiron/issues"
+    "url": "https://github.com/HDR-Organization/proiect-2-stefancosma11/issues"
   },
-  "homepage": "https://github.com/HDR-Organization/proiect-2-RaulMiron#readme",
+  "homepage": "https://github.com/HDR-Organization/proiect-2-stefancosma11#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
     "express-ejs-layouts": "^2.5.0",
+    "express-session": "^1.17.1",
     "mysql": "^2.18.1"
   }
 }

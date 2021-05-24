@@ -1,25 +1,20 @@
-<!DOCTYPE html>
-<html lang="ro-RO">
-    <head>
-        <meta charset="UTF-8">
-        <title>Papetarie</title>
-    </head>
+<center>
+    <%if (log==null) { %>
+       <h3> Bine ai venit! </h3>
+       <form action="/autentificare" method="GET">
+        <button type="submit">Autentificare</button>
+    </form>
+    <%} else { %>
+        <h3> <%= log %> </h3>
+        
+        <!-- <input type="submit" value="Delogare"> -->
+        <button>Creare BD</button>
+        <button>Incarcare BD</button>
 
-    <body>
-        <header>
-            <h1>Papetarie</h1>
-            <hr>
-        </header>
 
-        <nav>
-            <button id="creare_bd" >Creare BD</button> 
-            <button id="load_bd">Incarcare BD</button>
-        </nav>
 
-       
-        <footer>
-            <hr>
-            &copy; Miron Raul
-        </footer>
-    </body>
-</html>
+    <% } %>
+    
+     
+  
+</center>

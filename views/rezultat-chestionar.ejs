@@ -1,1 +1,41 @@
-<p><% rezultatChestionar %></p>
+
+
+<html>
+    <head></head>
+    <body>
+        <fieldset class="fieldchestionar">
+            <legend>Rezultate chestionar</legend>
+            <form action="/rezultat-chestionar.ejs">
+            <% var imputNames="var";%>
+            <% var count=0; %>
+            <% for( var j=0; j<intrebari.length;j++) { %>
+                <% var imputNames="var" + (j+1);%>
+                <label for="intrebare"><%- intrebari[j].intrebare %>:</label><br> 
+                <% for (var i=0; i<4;i++ )  { %>
+                    <input type="radio" name="<%- imputNames;%>" disabled>
+                    <%- intrebari[j].variante[i] %></br> 
+                <% }  %>
+                <%if (raspunsCorect[j]==1) { %> 
+                    <% count++;%> 
+                    
+                    <span style="background-color:green">Raspuns corect</span>
+                <% } %>
+                <%if (raspunsCorect[j]==0) { %>
+                    <span style="background-color:red">Raspuns gresit</span>
+                <% } %> 
+               
+                <span></span>
+                <br>
+            <%  } %> 
+            <span>Numarul de raspunsuri corecte este: <%=raspunsCorect%></span>
+           
+            </form>
+        </fieldset>
+    </body>
+ </html>
+
+
+
+
+
+
