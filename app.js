@@ -4,6 +4,7 @@ const bodyParser = require('body-parser')
 const cookieParser=require('cookie-parser');
 const mysql=require('mysql');
 const fs = require('fs');
+const { connect } = require('http2');
 
 
 const app = express();
@@ -43,7 +44,12 @@ var con = mysql.createConnection({
   });
 
 
-
+var con1=mysql.createConnection({
+	host: "localhost",
+	user: "test",
+	password: "test1234",
+	database: "Cumparaturi"
+  });
 app.get('/', (req, res) => {
 	
 
@@ -55,12 +61,24 @@ app.get('/', (req, res) => {
 app.get('/creare-bd', (req, res) => {
 	
 	con.query("CREATE DATABASE IF NOT EXISTS Cumparaturi", function (err, result) {
-		if (err) throw err;
+		
 		console.log("Database created");
+	  }); 
+
+	  sql="CREATE TABLE IF NOT EXISTS Cumparaturi.Produse(idProdus INT primary key, nume VARCHAR(255), pret INT);"; 
+	  con.query(sql,function(err,result){ 
+		  console.log("Table created!");
 	  });
 	  res.redirect('/')
 });
-
+app.get('/inserare-bd', (req, res) => {
+	
+	var sql = "INSERT INTO Cumparaturi.produse (idProdus, nume, pret) VALUES (1, 'Caiet',500)";
+  	con1.query(sql, function (err, result) { 
+	console.log("1 record inserted");
+});
+	  res.redirect('/')
+}); 
 
 
 app.get('/autentificare', (req, res) => res.render('autentificare',{cookieErr:req.cookies['cookieErr']}));
