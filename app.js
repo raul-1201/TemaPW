@@ -46,8 +46,8 @@ var con = mysql.createConnection({
 
 app.get('/', (req, res) => {
 	
-	
-	res.render('index',{log:req.cookies['log']});
+
+	res.render('index',{log:req.cookies['cookieLogin']});
 	
 
 });
@@ -63,13 +63,13 @@ app.get('/creare-bd', (req, res) => {
 
 
 
-app.get('/autentificare', (req, res) => res.render('autentificare',{ErrorAuth:req.cookies['ErrorAuth']}));
+app.get('/autentificare', (req, res) => res.render('autentificare',{cookieErr:req.cookies['cookieErr']}));
 app.post('/verificare-autentificare', (req, res) => {
 	console.log(req.body);
 	//console.log(req.body["uname"]);
 	if(req.body["uname"]==utilizatori[0].uname && req.body["psw"]==utilizatori[0].psw )
 	{
-		res.cookie('log','Bine ai venit, '+ req.body['uname']+'!',{maxAge:600000,httpOnly:true});
+		res.cookie('cookieLogin','Bine ai venit, '+ req.body['uname']+'!',{maxAge:600000,httpOnly:true});
 		//console.log(req.cookies['log']);
 		if(req.cookies['uname']!=null)
 		{
@@ -82,7 +82,7 @@ app.post('/verificare-autentificare', (req, res) => {
 		
 	else
 	{
-		res.cookie('ErrorAuth','Utilizatorul sau parola sunt gresite',{maxAge:1000,httpOnly:true});
+		res.cookie('cookieErr','Utilizatorul sau parola sunt gresite',{maxAge:1000,httpOnly:true});
 		res.cookie('uname', null);
 		res. redirect('/autentificare');
 		
@@ -131,9 +131,9 @@ app.post('/rezultat-chestionar', (req, res) => {
 
 
 app.get('/delogare', (req, res) => {
-	if(req.cookies['log']!=null)
+	if(req.cookies['cookieLogin']!=null)
 	{
-		res.clearCookie('log');
+		res.clearCookie('cookieLogin');
 		res.redirect('/');
 	}
 });
