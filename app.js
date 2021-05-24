@@ -5,6 +5,7 @@ const cookieParser=require('cookie-parser');
 const mysql=require('mysql');
 const fs = require('fs');
 
+
 const app = express();
 
 
@@ -35,18 +36,33 @@ fs.readFile('utilizatori.json', (err, data) => {
     
 });
 
-
+var con = mysql.createConnection({
+	host: "localhost",
+	user: "test",
+	password: "test1234"
+  });
 
 
 
 app.get('/', (req, res) => {
 	
+	
 	res.render('index',{log:req.cookies['log']});
-	//res.clearCookie('uname');
-	if(req.body['Delogare'])	
-		res.clearCookie('log');
+	
 
 });
+
+app.get('/creare-bd', (req, res) => {
+	
+	con.query("CREATE DATABASE IF NOT EXISTS Cumparaturi", function (err, result) {
+		if (err) throw err;
+		console.log("Database created");
+	  });
+	  res.redirect('/')
+});
+
+
+
 app.get('/autentificare', (req, res) => res.render('autentificare',{ErrorAuth:req.cookies['ErrorAuth']}));
 app.post('/verificare-autentificare', (req, res) => {
 	console.log(req.body);
@@ -83,7 +99,6 @@ fs.readFile('intrebari.json', (err, data) => {
     intrebari = JSON.parse(data);
     
 });
-
 
 
 // la accesarea din browser adresei http://localhost:6789/chestionar se va apela funcția specificată
