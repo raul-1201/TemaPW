@@ -88,25 +88,7 @@ fs.readFile('intrebari.json', (err, data) => {
 
 // la accesarea din browser adresei http://localhost:6789/chestionar se va apela funcția specificată
 app.get('/chestionar', (req, res) => {
-	// const listaIntrebari = [
-	// 	{
-	// 		intrebare: 'Care este capitala Angliei?',
-	// 		variante: ['Londra', 'Rusia', 'Paris', 'Berlin'],
-	// 		corect: 0
-	// 	},
-    // 	{
-	// 		intrebare: 'Care este cel mai lung fluviu al Europei?',
-	// 		variante: ['Rin', 'Volga', 'Nil', 'Dunare'],
-	// 		corect: 1
-	// 	},
-	// 	{
-	// 		intrebare: 'Care este cel mai înalt munte de pe Glob?',
-	// 		variante: ['Omu', 'K2', 'Mont Blanc', 'Everest'],
-	// 		corect: 3
-	// 	},
-	// 	//...
-	// ];
-	// în fișierul views/chestionar.ejs este accesibilă variabila 'intrebari' care conține vectorul de întrebări
+	
 	res.render('chestionar', {intrebari});
 });
 
@@ -132,4 +114,12 @@ app.post('/rezultat-chestionar', (req, res) => {
 		res.render('rezultat-chestionar',{intrebari,raspunsCorect })
 });
 
+
+app.get('/delogare', (req, res) => {
+	if(req.cookies['log']!=null)
+	{
+		res.clearCookie('log');
+		res.redirect('/');
+	}
+});
 app.listen(port, () => console.log(`Serverul rulează la adresa http://localhost:`));

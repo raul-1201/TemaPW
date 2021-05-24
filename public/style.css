@@ -42,7 +42,13 @@ h1{
     
 
 }  
-
+.logo{ 
+    position: relative; 
+    width: 100px; 
+    height: 100px; 
+    float:left;
+    
+} 
 .text-side{  
     
     margin-top:70px;
