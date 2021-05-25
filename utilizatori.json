@@ -1,4 +1,8 @@
 [{
      "uname":"admin",
     "psw":"admin"
-}]
+
+    
+}, {"uname":"user", 
+"psw":"user"}]
+

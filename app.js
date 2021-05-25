@@ -102,7 +102,19 @@ app.post('/verificare-autentificare', (req, res) => {
 	if(req.body["uname"]==utilizatori[0].uname && req.body["psw"]==utilizatori[0].psw )
 	{
 		res.cookie('cookieLogin','Bine ai venit, '+ req.body['uname']+'!',{maxAge:600000,httpOnly:true});
-		//console.log(req.cookies['log']);
+		
+		if(req.cookies['uname']!=null)
+		{
+			res.clearCookie('uname');
+		}
+		res.redirect('/');
+		
+	} 
+	else if(req.body["uname"]==utilizatori[1].uname && req.body["psw"]==utilizatori[1].psw ) 
+	{
+
+		res.cookie('cookieLogin','Bine ai venit, '+ req.body['uname']+'!',{maxAge:600000,httpOnly:true});
+		
 		if(req.cookies['uname']!=null)
 		{
 			res.clearCookie('uname');
@@ -116,7 +128,7 @@ app.post('/verificare-autentificare', (req, res) => {
 	{
 		res.cookie('cookieErr','Utilizatorul sau parola sunt gresite',{maxAge:1000,httpOnly:true});
 		res.cookie('uname', null);
-		res. redirect('/autentificare');
+		res.redirect('/autentificare');
 		
 		res.end();
 	}
