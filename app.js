@@ -72,9 +72,13 @@ app.get('/creare-bd', (req, res) => {
 	  res.redirect('/')
 });
 app.get('/inserare-bd', (req, res) => {
-	
-	var sql = "INSERT INTO Cumparaturi.produse (idProdus, nume, pret) VALUES (1, 'Caiet',500)";
-  	con1.query(sql, function (err, result) { 
+	var valori=[ 
+		[1,'Caiet',5], 
+		[2,'Dosar',7], 
+		[3,'Carte',15]	 
+];
+	var sql = "INSERT INTO Cumparaturi.Produse (idProdus, nume, pret) VALUES ?";
+  	con.query(sql,[valori], function (err, result) { 
 	console.log("1 record inserted");
 });
 	  res.redirect('/')
