@@ -70,7 +70,17 @@ app.get('/creare-bd', (req, res) => {
 		  console.log("Table created!");
 	  });
 	  res.redirect('/')
+}); 
+
+app.get('/stergere-bd', (req, res) => {
+	
+	var sql = "DROP TABLE Cumparaturi.Produse";
+  	con.query(sql, function (err, result) {
+    console.log("Table deleted");
+  });
+	  res.redirect('/')
 });
+
 app.get('/inserare-bd', (req, res) => {
 	var valori=[ 
 		[1,'Caiet',5], 
@@ -79,7 +89,7 @@ app.get('/inserare-bd', (req, res) => {
 ];
 	var sql = "INSERT INTO Cumparaturi.Produse (idProdus, nume, pret) VALUES ?";
   	con.query(sql,[valori], function (err, result) { 
-	console.log("1 record inserted");
+	console.log("Records inserted");
 });
 	  res.redirect('/')
 }); 
