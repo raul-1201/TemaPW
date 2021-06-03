@@ -1,6 +1,6 @@
 @import url(//db.onlinewebfonts.com/c/aef726001a07788d4c639a835fa10360?family=FF+Tisa);
 body{ 
-    background-color: green; 
+    background-color:coral; 
 
 }  
 
@@ -21,7 +21,75 @@ h1{
 .site-nav{ 
     margin-left:60%;
     
+}  
+.textboxes{ 
+    margin-left:20%; 
+    margin-top:20px;  
+    margin-right:20%;
+    width:50%;
+    border:2px solid #aaa;
+    border-radius:4px;
+    outline:none;
+    padding:8px;
+    box-sizing:border-box;
+    transition:.3s;
+
+}   
+.textboxes:focus{ 
+    border-color:dodgerBlue;
+    box-shadow:0 0 8px 0 dodgerBlue;
+}
+.spans{ 
+    margin-left:20%; 
+    margin-top:20px;  
+    font-family:FF Tisa; 
+}
+#stadion,#inceput,#reincarca{ 
+    margin-left:20%; 
+    margin-top:20px; 
+    font-family:FF Tisa;  
+    color:  black;
+    border: 2px solid dodgerblue;
+    border-radius: 0px;
+    padding: 18px 36px;
+    display: inline-block;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 dodgerblue;
+    -webkit-transition: ease-out 0.4s;
+    -moz-transition: ease-out 0.4s;
+    transition: ease-out 0.4s;
+}  
+#stadion:hover{ 
+    box-shadow: inset 0 100px 0 0 dodgerblue;
 } 
+#reincarca:hover{ 
+    box-shadow: inset 0 100px 0 0 dodgerblue;
+}
+#inceput:hover{ 
+    box-shadow: inset 0 100px 0 0 dodgerblue;
+} 
+#winner{ 
+    font-family:FF Tisa;  
+    color: black;
+    border: 2px solid dodgerblue;
+    border-radius: 0px;
+    padding: 18px 36px;
+    display: inline-block;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 dodgerblue;
+    -webkit-transition: ease-out 0.4s;
+    -moz-transition: ease-out 0.4s;
+    transition: ease-out 0.4s; 
+    
+} 
+#winner:hover{ 
+    box-shadow: inset 0 100px 0 0 dodgerblue;
+}
+
 .buton{ 
     padding:10px 15px 10px 15px;
     text-transform: uppercase;
@@ -49,14 +117,12 @@ h1{
     float:left;
     
 } 
-.text-side{  
-    
-    margin-top:70px;
-    margin-left:0%; 
-    margin-right: 0%; 
-    padding-bottom: 40%; 
-} 
+.text-side{ 
+    font-family:FF Tisa;
+}
 
-.fieldchestionar{ 
-    margin-top:80px;
+img{ 
+    width:400px; 
+    height: 300px; 
+    margin-left:30%;
 }

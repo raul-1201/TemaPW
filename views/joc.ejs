@@ -1,0 +1,92 @@
+
+<button type="button" onClick="refreshPage()" id="reincarca">Incarca alt joc</button>
+
+ <input type="text" id="echipa1" placeholder="Introduceti ECHIPA 1" class="textboxes"> <br>
+ <input type="text" id="echipa2" placeholder="Introduceti ECHIPA 2" class="textboxes"> <br>
+ <input type="text" id="rezultat" placeholder="Introduceti rezultatul" class="textboxes"><br>
+ <button id="stadion" onclick="afisareEchipe()">Spre stadion</button>
+ <br><br>  
+ <span id="team1" class="spans"></span>  
+ <span id="rez1"></span><br>
+ <span id="team2" class="spans"></span> 
+ <span id="rez2"></span><br> 
+ <span id="aflare" class="spans"></span><br> 
+
+ <script> 
+
+    function afisareEchipe() { 
+        var reload=2; 
+        if(reload==2) 
+        {
+        var  x = document.getElementById("echipa1").value;
+        document.getElementById("team1").innerHTML = x; 
+        
+        var y = document.getElementById("echipa2").value;
+        document.getElementById("team2").innerHTML = y;  
+        
+        //   var z = document.getElementById("rezultat").value;
+       // document.getElementById("rez").innerHTML = z;  
+        var btn = document.createElement("BUTTON"); 
+        btn.id="inceput"; 
+        btn.onclick=function(){ 
+            var r1=Math.floor(Math.random() * 5); 
+            var r2=Math.floor(Math.random()* 5); 
+            document.getElementById("rez1").innerHTML=r1; 
+            document.getElementById("rez2").innerHTML=r2;  
+            var castigator=document.createElement("BUTTON"); 
+            castigator.id="winner"; 
+            castigator.innerHTML="Ai avut noroc?"; 
+            document.body.appendChild(castigator); 
+            castigator.onclick=function(){ 
+                var miza=document.getElementById("rezultat").value; 
+                if(miza=="X" && r1==r2) 
+                { 
+                    document.getElementById("aflare").innerHTML="Felicitari, ai castigat. Ai mizat pe egal."; 
+                }  
+                if(miza=="X" && r1!=r2) 
+                { 
+                    document.getElementById("aflare").innerHTML="Astazi nu ai avut noroc, pariul nu este castigator!";
+                }  
+
+                if(miza=="1" && r1>r2) 
+                { 
+                    document.getElementById("aflare").innerHTML="Felicitari, ai castigat. Ai mizat pe victoria primei echipe.";
+                }  
+                if(miza=="1" && r1==r2 || r2>r1) 
+                { 
+                    document.getElementById("aflare").innerHTML="Astazi nu ai avut noroc, pariul nu este castigator!";
+                }
+                if(miza=="2" && r2>r1) 
+                { 
+                    document.getElementById("aflare").innerHTML="Felicitari, ai castigat. Ai mizat pe victoria echipei a doua.";
+                } 
+                if(miza=="2" && r2<r1 || r1==r2) 
+                { 
+                    document.getElementById("aflare").innerHTML="Astazi nu ai avut noroc, pariul nu este castigator!";
+                }  
+            }
+        }
+        btn.innerHTML = "Incepe Meciul";
+        document.body.appendChild(btn);  
+        reload++;
+         
+    }
+    } 
+    
+   
+  
+    </script>
+
+
+
+<script>
+function refreshPage(){
+    window.location.reload();
+} 
+</script>
+
+
+
+
+
+
